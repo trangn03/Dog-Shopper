@@ -1,3 +1,4 @@
+// backend need to run in order to upload the data to front end  
 const express = require("express");
 const app = express();
 
@@ -80,6 +81,7 @@ const dogs = [
 
 app.get("/v1/dogs", (req, res) => {
     // Get the information sucessfully
+    // Need response 
     res.status(200).json(dogs);
 });
 
