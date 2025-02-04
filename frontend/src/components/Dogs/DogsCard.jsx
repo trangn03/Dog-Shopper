@@ -1,5 +1,13 @@
+import React, {useState} from 'react';
+import "./dogs.css";
+
 const DogsCard = (props) => {
     const {id, name, breed, description, price, imageUrl} = props;
+    const [isAdded, setAdded] = useState(false);
+
+    const handleClick = () => {
+        setAdded(true); 
+    }
 
     return ( 
         <>
@@ -17,7 +25,14 @@ const DogsCard = (props) => {
 
             <div className="dogs-price">${price}</div>
 
-            <button className="dogs-btn"> Add to Cart</button>
+            {/* Conditional rendering */}
+            {isAdded ? (
+                // When is it true then added to the cart
+                <button disabled className="dogs-btn-disabled"> Added</button>
+            ) : (
+                // Just leave there 
+                <button className="dogs-btn" onClick={handleClick}> Add to Cart</button>
+            )}
 
         </section>
 
