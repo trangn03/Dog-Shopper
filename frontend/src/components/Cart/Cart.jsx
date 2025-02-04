@@ -1,7 +1,9 @@
+import "./cart.css";
+
 const Cart = () => {
     return ( 
         <>
-            <h1>My Cart</h1>
+            <header>MY CART</header>
         </>
      );
 }

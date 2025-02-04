@@ -1,8 +1,9 @@
+import "./home.css";
+
 const Home = () => {
     return (  
         <>
-
-            <h1>Welcome to my pet shop</h1>
+            <header> 🐶 WELCOME TO MY PET SHOP 🐶 </header>
         </>
     );
 }
