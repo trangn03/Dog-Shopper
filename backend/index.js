@@ -1,5 +1,6 @@
 // backend need to run in order to upload the data to front end  
 const express = require("express");
+const serverless = require("serverless-http");
 const app = express();
 
 const PORT = process.env.PORT || 8080;
@@ -81,12 +82,19 @@ const dogs = [
   },
 ];
 
+app.get("/", (req, res) => {
+    res.send("Welcome to the Dogs API! Visit /v1/dogs to see the list of dogs.");
+});
+
 app.get("/v1/dogs", (req, res) => {
     // Get the information sucessfully
     // Need response 
     res.status(200).json(dogs);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
+
+module.exports = app;
+module.exports.handler = serverless(app);
