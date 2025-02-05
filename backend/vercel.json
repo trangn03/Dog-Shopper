@@ -6,6 +6,6 @@
     }],
     "routes": [{
         "src": "/v1/dogs",
-        "dest": "/"
+        "dest": "/index.js"
     }]
 }
