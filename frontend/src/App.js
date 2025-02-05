@@ -6,10 +6,13 @@ import Cart from "./components/Cart/Cart";
 import NavBar from "./Navbar/Navbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { CartContext } from './Context/CartContext';
 
 
 function App() {
   const [allDogs, setAllDogs] = useState([]);
+  const [myCart, addToCart] = useState([]);
+  const [total, setTotal] = useState(0);
 
   // Get data from the server
   useEffect(() => {
@@ -23,6 +26,7 @@ function App() {
   }, []);
 
   return (
+    <CartContext.Provider value={{myCart, addToCart, total, setTotal}}>
       <Router>
         <NavBar/>
         <div className="page-container">
@@ -32,8 +36,8 @@ function App() {
             <Route path ="/cart" element={<Cart/>}/>
           </Routes>
         </div>
-      
       </Router>
+    </CartContext.Provider>
   );
 }
 
