@@ -92,9 +92,9 @@ app.get("/v1/dogs", (req, res) => {
     res.status(200).json(dogs);
 });
 
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 module.exports = app;
 module.exports.handler = serverless(app);
