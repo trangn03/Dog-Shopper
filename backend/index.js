@@ -2,6 +2,8 @@
 const express = require("express");
 const app = express();
 
+const PORT = process.env.PORT || 8080;
+
 const dogs = [
   {
     id: 1,
@@ -85,6 +87,6 @@ app.get("/v1/dogs", (req, res) => {
     res.status(200).json(dogs);
 });
 
-app.listen("8080", () => {
-    console.log("Server is running....");
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
