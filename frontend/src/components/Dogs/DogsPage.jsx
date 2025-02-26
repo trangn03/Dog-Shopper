@@ -7,7 +7,7 @@ const DogsPage = () => {
 
     // Step 2: Fetch data from API
     useEffect(() => {
-        fetch("http://localhost:3000/dogs") // Adjust API URL if needed
+        fetch("/v1/dogs") // Adjust API URL if needed
             .then((res) => res.json())
             .then((data) => {
                 console.log("Fetched data:", data); // Debugging API response
